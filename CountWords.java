@@ -2,30 +2,30 @@ import java.util.*;
 
 public class CountWords {
     public static void main(String[] args) {
-        String str;
+        String myStr;
         Scanner sc = new Scanner(System.in);
         char ch;
         int i;
-        int count = 0;
+        int count_words = 0;
         int length;
         boolean isaPunctuation = false;
         System.out.print("Enter a string >> ");
-        str = sc.nextLine();
-        length = str.length();
+        myStr = sc.nextLine();
+        length = myStr.length();
         for (i = 0; i < length; i++) {
-            ch = str.charAt(i);
+            ch = myStr.charAt(i);
             if (ch == ' ' || ch == '.' || ch == ';' || ch == ',' ||
                     ch == '!' || ch == '-') {
-                ++count;
+                ++count_words;
                 if (isaPunctuation)
-                    --count;
+                    --count_words;
                 isaPunctuation = true;
             } else
                 isaPunctuation = false;
         }
         if (!isaPunctuation)
-            ++count;
+            ++count_words;
 
-        System.out.println("There are " + count + " words in the string");
+        System.out.println("There are " + count_words + " words in the string");
     }
 }
